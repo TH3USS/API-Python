@@ -1,3 +1,4 @@
+# streamlit run main.py
 import requests
 import streamlit as st
 
@@ -8,10 +9,8 @@ def buscar_letra(banda, musica):
     letra = response.json()['lyrics'] if response.status_code == 200 else ''
     return letra
 
-st.image('...')
+st.image('https://i.pinimg.com/originals/f6/19/dc/f619dca0827479526339320cc71d6a96.gif')
 st.title('Letras de músicas')
-response = requests.get(endpoint)
-
 banda = st.text_input('Digite o nome da banda/cantor: ', key='banda')
 musica = st.text_input('Digite o nome da música: ', key='music')
 pesquisar = st.button('Pesquisar')
